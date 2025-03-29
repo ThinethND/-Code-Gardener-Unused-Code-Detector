@@ -1,4 +1,4 @@
-const { detectUnusedCode } = require("../src/scanner");
+const { detectUnusedCode } = require("../../src/scanner");
 
 test("Detects unused variables", async () => {
     const unused = await detectUnusedCode();
