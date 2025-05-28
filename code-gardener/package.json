@@ -1,28 +1,35 @@
 {
   "name": "code-gardener",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A CLI-based NPM package that scans a codebase for unused variables, functions, and files",
+  "main": "src/index.js",
+  "bin": {
+    "code-gardener": "./bin/cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-
   "jest": {
-  "transform": {
-    "^.+\\.m?js$": "babel-jest"
+    "transform": {
+      "^.+\\.m?js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(globby|fast-glob|p-map|slash|dir-glob|merge2|path-type)/)"
+    ]
   },
-  "extensionsToTreatAsEsm": [".js"]
-  },
-
-  "keywords": [],
-  "author": "",
+  "keywords": ["unused", "code", "detector", "cleanup", "static-analysis", "eslint"],
+  "author": "Your Name",
   "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/code-gardener.git"
+  },
   "dependencies": {
-    "chalk": "^5.4.1",
+    "chalk": "^4.1.2",
     "commander": "^13.1.0",
     "eslint": "^9.22.0",
     "fs-extra": "^11.3.0",
-    "globby": "^14.1.0",
+    "globby": "^11.1.0",
     "inquirer": "^12.5.0",
     "ora": "^8.2.0"
   }
